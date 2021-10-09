@@ -1,0 +1,30 @@
+plugins {
+    id 'java'
+    id 'groovy'
+}
+
+java {
+    sourceCompatibility = JavaVersion.VERSION_1_7
+    targetCompatibility = JavaVersion.VERSION_1_7
+}
+
+repositories {
+    maven { url 'http://maven.aliyun.com/nexus/content/groups/public' }
+    google()
+    jcenter()
+}
+
+dependencies {
+    implementation gradleApi()
+    implementation localGroovy()
+    implementation "commons-io:commons-io:2.6"
+
+    // Android DSL  Android编译的大部分gradle源码
+    implementation 'com.android.tools.build:gradle:3.6.2'
+    implementation 'com.android.tools.build:gradle-api:3.6.2'
+    //ASM
+    implementation 'org.ow2.asm:asm:7.1'
+    implementation 'org.ow2.asm:asm-util:7.1'
+    implementation 'org.ow2.asm:asm-commons:7.1'
+}
+
